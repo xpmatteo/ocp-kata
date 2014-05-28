@@ -73,17 +73,7 @@ public class CheckoutTest {
 	}
 
 	@Test@Ignore
-	public void another() throws Exception {
-		checkOut.scan("B");
-		checkOut.scan("B");
-		assertEquals(45, checkOut.total());
-		checkOut.scan("B");
-		checkOut.scan("B");
-		assertEquals(45 + 45, checkOut.total());
-	}
-
-	@Test@Ignore
-	public void thisIsReallyDifficult() throws Exception {
+	public void thisIsDifficult() throws Exception {
 		// One more variation:
 		// "E" costs 55.
 		// But it costs just 19 if you have bought two of "C".

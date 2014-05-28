@@ -50,12 +50,12 @@ public class MonopolyTest {
 	public void incomeTax() throws Exception {
 		// if balance is more than 2000 then pay 200
 		alice.setBalance(3000);
-		alice.landsOn("LUXURY TAX");
+		alice.landsOn("INCOME TAX");
 		assertEquals(3000 - 200, alice.balance());
 
 		// if balance is less than 2000 then pay 10% of balance
 		bob.setBalance(1000);
-		bob.landsOn("LUXURY TAX");
+		bob.landsOn("INCOME TAX");
 		assertEquals(1000 - 100, bob.balance());
 	}
 
