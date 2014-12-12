@@ -59,6 +59,35 @@ public class MonopolyTest {
 		assertEquals(1000 - 100, bob.balance());
 	}
 
+	@Test@Ignore
+	public void nameGift() throws Exception {
+        // This square exists only in some very rare editions of Monopoly
+        // The player receives one euro for each letter of his or her name
+		alice.setBalance(100);
+		alice.landsOn("GIFT OF NAME");
+		assertEquals(100 + 5, alice.balance());
+
+		bob.setBalance(100);
+		bob.landsOn("GITF OF NAME");
+		assertEquals(1000 + 3, bob.balance());
+	}
+
+	@Test@Ignore
+	public void utilityTax() throws Exception {
+        // This square exists only in some very rare editions of Monopoly
+        // The player pays 10 for every Utility he or she owns
+		// The utilities are: ELECTRIC COMPANY and WATER WORKS
+		alice.setBalance(1000);
+		alice.addOwnedProperty("ELECTRIC COMPANY");
+		alice.landsOn("UTILITY TAX");
+		assertEquals(1000 - 10, alice.balance());
+
+		bob.setBalance(1000);
+		bob.addOwnedProperty("ELECTRIC COMPANY");
+		bob.addOwnedProperty("WATER WORKS");
+		bob.landsOn("UTILITY TAX");
+		assertEquals(1000 - 20, bob.balance());
+	}
 
 	@Test@Ignore
 	public void payRentOnUnimprovedProperty() throws Exception {

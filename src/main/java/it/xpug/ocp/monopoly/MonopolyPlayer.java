@@ -1,14 +1,16 @@
 package it.xpug.ocp.monopoly;
 
+import java.util.*;
+
 
 public class MonopolyPlayer {
 
 	private int balance;
+	private String playerName;
+	private List<Object> ownedProperties = new ArrayList<Object>();
 
 	public MonopolyPlayer(String playerName) {
-	}
-
-	public void landsOn(String squareName) {
+		this.playerName = playerName;
 	}
 
 	public void setBalance(int newBalance) {
@@ -23,7 +25,19 @@ public class MonopolyPlayer {
 		return null;
 	}
 
+	public String playerName() {
+		return playerName;
+	}
+
 	public void addOwnedProperty(String squareName) {
+		ownedProperties.add(squareName);
+	}
+
+	public boolean isOwned(String squareName) {
+		return ownedProperties.contains(squareName);
+	}
+
+	public void landsOn(String squareName) {
 	}
 
 }
